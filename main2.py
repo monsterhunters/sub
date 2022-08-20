@@ -32,7 +32,7 @@ CLIENT_SECRET_FILE = 'credentials.json'
 
 SA_ACCOUNT = True
 SA_SECRET_FILE = 'sa-account.json'
-THREADS = 20
+THREADS = int(open("cpu.txt","r").readline())
 srt_file_list = {}
 
 def get_credentials(CLIENT_SECRET_FILE):
