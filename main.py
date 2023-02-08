@@ -88,6 +88,7 @@ def main():
         texts_dir.mkdir()
 
     images = Path(f'{current_directory}/up').rglob('*.jpeg')
+    images = Path(f'{current_directory}/up').rglob('*.jpg')
     images2 = []
     threads = []
     for image in images:
