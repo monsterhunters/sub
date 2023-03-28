@@ -94,6 +94,8 @@ def main():
         images2.append(image)
     for image in Path(f'{current_directory}/up').rglob('*.png'):
         images2.append(image)	
+    for image in Path(f'{current_directory}/up').rglob('*.jpg'):
+        images2.append(image)	
     for image in images2:
         t = threading.Thread(target=ocr_image, args=[image, line, credentials, current_directory])
         line += 1
