@@ -87,11 +87,12 @@ def main():
     if not texts_dir.exists():
         texts_dir.mkdir()
 
-    images = Path(f'{current_directory}/down').rglob('*.jpeg')
-    #images = Path(f'{current_directory}/down').rglob('*.jpg')
+    images = Path(f'{current_directory}/up').rglob('*.jpg')
     images2 = []
     threads = []
     for image in images:
+        images2.append(image)
+    for image in Path(f'{current_directory}/up').rglob('*.png'):
         images2.append(image)
     for image in images2:
         t = threading.Thread(target=ocr_image, args=[image, line, credentials, current_directory])
